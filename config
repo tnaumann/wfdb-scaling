@@ -1,0 +1,21 @@
+############################
+## WFDB cluster templates ##
+############################
+[key wfdbkey]
+KEY_LOCATION = ~/.ssh/wfdbkey.rsa
+
+[cluster wfdbcluster]
+KEYNAME = wfdbkey
+CLUSTER_SIZE = 1
+CLUSTER_USER = sgeadmin
+CLUSTER_SHELL = bash
+NODE_IMAGE_ID = ami-7c5c3915
+NODE_INSTANCE_TYPE = m1.small
+PLUGINS = wfdbhadoop, wfdbpkginstaller
+
+[plugin wfdbhadoop]
+SETUP_CLASS = starcluster.plugins.hadoop.Hadoop
+
+[plugin wfdbpkginstaller]
+SETUP_CLASS = starcluster.plugins.pkginstaller.PackageInstaller
+PACKAGES = octave
