@@ -21,7 +21,7 @@ This project aims to provide simple instruction and examples for researchers fam
 
 Cluster Deployment
 ------------------
-Deploying and managing a cluster is often a non-trivial task. Therefore, we will be using [StarCluster](http://star.mit.edu/cluster) to quickly and simply create a suitable cluster on Amazon EC2.
+Deploying and managing a cluster is often a non-trivial task. Therefore, we will be using [StarCluster](http://star.mit.edu/cluster) to quickly and simply create a suitable cluster on Amazon EC2. The following assumes you already have an AWS account, so if you do not, head over to [AWS](http://aws.amazon.com/) and create one.
 
 
 ### Installing StarCluster
