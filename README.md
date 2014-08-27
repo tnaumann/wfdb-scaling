@@ -65,13 +65,31 @@ aws_user_id = #your 12-digit aws user id here
 
 Third, create a WFDB keypair for accessing the instances that will be created:
 
-```bash
+```sh
 starcluster createkey wfdbkey -o ~/.ssh/wfdbkey.rsa
 ```
 
 Finaly, add WFDB-specific cluster templates from this project's [config](config) to yours:
 
-```bash
+```sh
 curl https://raw.githubusercontent.com/tnaumann/wfdb-scaling/master/config >> ~/.starcluster/config
 ```
 
+### Deploy it!
+To deploy the most basic WFDB-specific cluster run:
+
+```sh
+starcluster start -c wfdbcluster mycluster
+```
+
+After the cluster has started, you can `ssh` to the master node as root by running:
+
+```sh
+starcluster sshmaster mycluster
+```
+
+Finally, you can terminate the cluster by running:
+
+```sh
+starcluster terminate mycluster
+```
