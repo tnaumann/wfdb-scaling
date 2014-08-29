@@ -33,6 +33,7 @@ However, many users can install the project using `pip`:
 pip install StarCluster
 ```
 
+(Note: Depending on your account permissions, you may have to use `sudo` or contact your system administrator for the above command.)
 
 ### Configuring StarCluster
 Detailled steps can be found in [StarCluster's quickstart guide](http://star.mit.edu/cluster/docs/latest/quickstart.html). 
@@ -69,7 +70,9 @@ Third, create a WFDB keypair for accessing the instances that will be created:
 starcluster createkey wfdbkey -o ~/.ssh/wfdbkey.rsa
 ```
 
-Finaly, add WFDB-specific cluster templates from this project's [config](config) to yours:
+(Note: If this step fails, you may need to ensure that the user specified in the `[aws info]` above has privileges to instantiate new instances. This can be done from the Amazon EC2 dashboard.)
+
+Finally, add WFDB-specific cluster templates from this project's [config](config) to yours:
 
 ```sh
 curl https://raw.githubusercontent.com/tnaumann/wfdb-scaling/master/config >> ~/.starcluster/config
