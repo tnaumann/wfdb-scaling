@@ -9,7 +9,7 @@ KEYNAME = wfdbkey
 CLUSTER_SIZE = 1
 CLUSTER_USER = sgeadmin
 CLUSTER_SHELL = bash
-NODE_IMAGE_ID = ami-7c5c3915
+NODE_IMAGE_ID = ami-765b3e1f
 NODE_INSTANCE_TYPE = m1.small
 PLUGINS = wfdbhadoop, wfdbpkginstaller
 
@@ -18,4 +18,4 @@ SETUP_CLASS = starcluster.plugins.hadoop.Hadoop
 
 [plugin wfdbpkginstaller]
 SETUP_CLASS = starcluster.plugins.pkginstaller.PackageInstaller
-PACKAGES = octave
+PACKAGES = octave, sharutils
