@@ -102,3 +102,14 @@ Or terminate it entirely by running:
 ```sh
 starcluster terminate mycluster
 ```
+
+
+Benchmarks
+----------
+In addition to the `wfdbcluster` cluster template provided, there are also three others that were used for benchmarking:
+  * `wfdbcluster-small`: 2 node
+  * `wfdbcluster-medium`: 4 node
+  * `wfdbcluster-large`: 8 node
+
+Each of the benchmark clusters uses `m1.small` instance types which provide a good balance of performance for cost; however, the could easily be modified to take advantage of more powerful EC2 instance types which would be expected to further improve performance.
+
