@@ -91,7 +91,13 @@ After the cluster has started, you can `ssh` to the master node as root by runni
 starcluster sshmaster mycluster
 ```
 
-Finally, you can terminate the cluster by running:
+Finally, you can temporarily stop the cluster by running:
+
+```sh
+starcluster stop mycluster
+```
+
+Or terminate it entirely by running:
 
 ```sh
 starcluster terminate mycluster
