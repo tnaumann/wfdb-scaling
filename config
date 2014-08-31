@@ -10,7 +10,7 @@ CLUSTER_SIZE = 1
 CLUSTER_USER = sgeadmin
 CLUSTER_SHELL = bash
 NODE_IMAGE_ID = ami-765b3e1f
-NODE_INSTANCE_TYPE = m1.small
+NODE_INSTANCE_TYPE = t1.micro
 PLUGINS = wfdbhadoop, wfdbpkginstaller
 
 [plugin wfdbhadoop]
