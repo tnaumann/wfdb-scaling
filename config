@@ -12,6 +12,8 @@ CLUSTER_SHELL = bash
 NODE_IMAGE_ID = ami-765b3e1f
 NODE_INSTANCE_TYPE = t1.micro
 PLUGINS = wfdbhadoop, wfdbpkginstaller
+# uncomment if physionet volume has been created
+# VOLUMES = physionet
 
 [cluster wfdbcluster-small]
 EXTENDS = wfdbcluster
@@ -32,3 +34,8 @@ SETUP_CLASS = starcluster.plugins.hadoop.Hadoop
 [plugin wfdbpkginstaller]
 SETUP_CLASS = starcluster.plugins.pkginstaller.PackageInstaller
 PACKAGES = octave, sharutils
+
+# uncomment when creating physionet volume
+# [volume physionet]
+# VOLUME_ID = vol-XXXXXXXX
+# MOUNT_PATH = /data/physionet
