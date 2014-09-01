@@ -128,6 +128,11 @@ Once the volume has been created, make two changes to the `~/.starcluster/config
 
 After these changes have been made the EBS volumes will be available at `MOUTH_PATH` (which has been set to `/data/physionet`) each time the cluster is started. Consequently data will be available without having to download it onto the cluster again.
 
+Of course, sometimes it may be convient to resize the volumes--e.g., if you have more data than available space. This is done quite easily using `starcluster resizevolume`. Using our example from before, the following command would double the capacity of our storage from 20GB to 40GB.
+```sh
+starcluster resizevolume --shutdown-volume-host vol-d555839a 40
+```
+
 
 Benchmarks
 ----------
