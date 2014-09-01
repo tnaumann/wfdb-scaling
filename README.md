@@ -121,6 +121,8 @@ starcluster createvolume --shutdown-volume-host --name=physionet 20 us-east-1c
 >>> Creating volume took 2.356 mins
 ```
 
+(NOTE: The volume availability zone, `us-east-1c` above, should match your AWS availability zones which can be obtained by running `starcluster listzones`. The best choice is likely the same as your cluster location which can be obtained by running `starcluster listclusters`.)
+
 Once the volume has been created, make two changes to the `~/.starcluster/config` file:
 
 1. In the `[cluster wfdbcluster]` template, uncomment the line `VOLUMES = physionet`, and
