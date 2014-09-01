@@ -122,6 +122,7 @@ starcluster createvolumes --shutdown-volume-host --name=physionet 20 us-east-1d
 ```
 
 Once the volume has been created, make two changes to the `~/.starcluster/config` file:
+
 1. In the `[cluster wfdbcluster]` template, uncomment the line `VOLUMES = physionet`, and
 2. in the `[volume physionet]` template, provide the correct `VOLUME_ID` (in this case `vol-d555839a`).
 
