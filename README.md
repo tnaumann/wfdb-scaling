@@ -103,6 +103,30 @@ Or terminate it entirely by running:
 starcluster terminate mycluster
 ```
 
+### Additional Storage (optional)
+For large data it is generally inefficient to download it onto to each new cluster. Instead, it is preferable to set up additional volumes which can be attached to each cluster as described in [StarCluster's Using EBS Volumes for Persistent Storage](http://star.mit.edu/cluster/docs/latest/manual/volumes.html).
+
+As an example, we will create a 20GB volume to store (some) physionet data, which can be resized to hold more if necessary. 
+
+First, to create the volume:
+```sh
+starcluster createvolumes --shutdown-volume-host --name=physionet 20 us-east-1d
+
+...
+
+>>> Leaving volume vol-d555839a attached to instance i-c4d0dc2b
+>>> Terminating host instance i-c4d0dc2b
+>>> Terminating node: volhost-us-east-1d (i-c4d0dc2b)
+>>> Your new 20GB volume vol-d555839a has been created successfully
+>>> Creating volume took 2.356 mins
+```
+
+Once the volume has been created, make two changes to the `~/.starcluster/config` file:
+1. In the `[cluster wfdbcluster]` template, uncomment the line `VOLUMES = physionet`, and
+2. in the `[volume physionet]` template, provide the correct `VOLUME_ID` (in this case `vol-d555839a`).
+
+After these changes have been made the EBS volumes will be available at `MOUTH_PATH` (which has been set to `/data/physionet`) each time the cluster is started. Consequently data will be available without having to download it onto the cluster again.
+
 
 Benchmarks
 ----------
