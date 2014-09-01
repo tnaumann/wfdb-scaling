@@ -110,13 +110,13 @@ As an example, we will create a 20GB volume to store (some) physionet data, whic
 
 First, to create the volume:
 ```sh
-starcluster createvolumes --shutdown-volume-host --name=physionet 20 us-east-1d
+starcluster createvolume --shutdown-volume-host --name=physionet 20 us-east-1c
 
 ...
 
 >>> Leaving volume vol-d555839a attached to instance i-c4d0dc2b
 >>> Terminating host instance i-c4d0dc2b
->>> Terminating node: volhost-us-east-1d (i-c4d0dc2b)
+>>> Terminating node: volhost-us-east-1c (i-c4d0dc2b)
 >>> Your new 20GB volume vol-d555839a has been created successfully
 >>> Creating volume took 2.356 mins
 ```
