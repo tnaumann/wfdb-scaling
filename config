@@ -28,6 +28,18 @@ CLUSTER_SIZE = 4
 EXTENDS = wfdbcluster-medium
 CLUSTER_SIZE = 8
 
+[cluster wfdbcluster-small-fast]
+EXTENDS = wfdbcluster-small
+NODE_INSTANCE_TYPE = c1.xlarge
+
+[cluster wfdbcluster-medium-fast]
+EXTENDS = wfdbcluster-medium
+NODE_INSTANCE_TYPE = c1.xlarge
+
+[cluster wfdbcluster-large-fast]
+EXTENDS = wfdbcluster-large
+NODE_INSTANCE_TYPE = c1.xlarge
+
 [plugin wfdbhadoop]
 SETUP_CLASS = starcluster.plugins.hadoop.Hadoop
 
